@@ -46,8 +46,10 @@ task :make_symbolic_links, :roles => [:app] do
 end
 
 task :restart_delayed_job, :roles => [:app] do
-  run "RAILS_ENV=#{rails_env} #{current_release}/script/delayed_job stop"
-  run "RAILS_ENV=#{rails_env} #{current_release}/script/delayed_job -n 2 start"
+ #run "RAILS_ENV=#{rails_env} #{current_release}/script/delayed_job stop"
+ #run "RAILS_ENV=#{rails_env} #{current_release}/script/delayed_job -n 2 start"
+  run "RAILS_ENV=#{rails_env} PATH=#{ENV['PATH']}:/home/rails/.rbenv/shims/ #{current_release}/script/delayed_job stop"
+  run "RAILS_ENV=#{rails_env} PATH=#{ENV['PATH']}:/home/rails/.rbenv/shims/ #{current_release}/script/delayed_job -n 2 start"
 end
 
 
