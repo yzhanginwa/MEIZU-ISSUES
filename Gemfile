@@ -38,8 +38,9 @@ group :development do
   gem "rdoc", ">= 2.4.2"
   gem "yard"
   gem 'awesome_print', '~> 1.0.2'
-  gem 'capistrano'
-  gem 'capistrano-ext'
+  gem 'capistrano', '~> 3.1.0'
+  gem 'capistrano-rbenv', '~>2.0.2'
+  gem 'capistrano-rails'
   gem 'quiet_assets'
 end
 
