@@ -1,12 +1,12 @@
-set :repository, "git://github.com/khonsou/MEIZU-ISSUES.git"
-set :application_servers, %w(issues)
-set :migration_server, "issues"
+set :repository, "git://github.com/yzhanginwa/reocar-tracker.git"
+set :application_servers, %w(reocar-tracker)
+set :migration_server, "reocar-tracker"
 set :user, "rails"
 set :rails_env, "production"
 set :branch, "production"
 set :deploy_via, :remote_cache
-set :application, "plano"
-ssh_options[:port] = 16120 
+set :application, "reocar-tracker"
+ssh_options[:port] = 22
 
 load File.dirname(__FILE__) + "/shared_code"
 
