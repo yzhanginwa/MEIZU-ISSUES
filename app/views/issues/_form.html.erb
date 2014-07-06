@@ -4,7 +4,7 @@
     <div>
       <% if @issue.safe_attribute? 'project_id' %>
         <% select_option = disabled_for_form_elements ? %>
-        <% {:disabled => true} : %>
+        <% {:disabled => false} : %>
         <% {:onchange => "updateIssueFrom('#{escape_javascript project_issue_form_path(@project, :id => @issue, :format => 'js')}')"} %>
       <p><%= f.select :project_id, project_options_for_select(find_visible_projects, :selected => @issue.project), {:required => true}, select_option %></p>
       <% end %>
