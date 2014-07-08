@@ -203,6 +203,8 @@ class ApplicationController < ActionController::Base
     else
       if @project && @project.archived?
         render_403 :message => :notice_not_authorized_archived_project
+      elsif @issue && @issue.author == User.current
+        true
       else
         deny_access
       end

@@ -71,7 +71,8 @@ class IssuesController < ApplicationController
   end
 
   def reported
-    @issues = @issues.open.reported_by(User.current)
+    #@issues = @issues.open.reported_by(User.current)
+    @issues = Issue.open.reported_by(User.current)
     process_issues
   end
 

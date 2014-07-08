@@ -122,6 +122,8 @@ class Issue < ActiveRecord::Base
 
   # Returns true if usr or current user is allowed to view the issue
   def visible?(usr=nil)
+    return true if (usr || User.current) == self.author
+
     (usr || User.current).allowed_to?(:view_issues, self.project) do |role, user|
       if user.logged?
         case role.issues_visibility
